@@ -3,7 +3,7 @@ error_reporting(E_PARSE | E_ERROR);
 
 include 'geoHash.php';
 
-$google_api_key='';
+$google_api_key=''; //removed sensitive information
 $discovery_api_key='';
 
 
