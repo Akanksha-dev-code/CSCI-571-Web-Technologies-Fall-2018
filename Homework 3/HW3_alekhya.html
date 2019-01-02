@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Encode Sans Expanded' rel='stylesheet'>
+<title> HW3_Alekhya </title>
+<style>
+
+ul 
+{
+	list-style-type:none;
+	background-color:white;
+	postion:fixed;
+	overflow:hidden;
+	margin:45px;
+	padding:0;	
+}
+
+li 
+{
+	float: right;
+}
+
+li a
+{
+	font-weight:lighter;
+	color: #888585;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover
+{
+	color:black;
+}
+
+footer 
+{
+	background-color: 	#1D2530;
+    padding: 100px;
+    text-align: center;
+    color: white
+	position:fixed;
+	width:1220px;
+	text-align:center-left;
+}
+
+.cropped
+{
+	object-fit:cover;
+	position:relative;
+}
+
+.top-left 
+{
+    background-color:  #0e3d5d;
+    width: 345px;
+    height: 395px;
+    padding: 25px;
+    margin: 25px;
+	position: absolute;
+
+    top: 140px;
+    left: 100px;
+	color:white;
+	font-family:Encode Sans Expanded;
+}
+
+body
+{
+	overflow-x:hidden;
+	width:1300px;
+	font-family:Encode Sans Expanded;
+	position:center;
+	margin:auto;
+}
+
+.button 
+{
+    background-color: #FBDF00;
+    border: none;
+    
+    padding: 16px 32px;
+    text-align: center;
+}
+
+.button:hover
+{
+	background-color:#16242E;
+	color:white;
+	cursor:pointer;
+}
+
+#amazing
+{
+	margin:150px;
+}
+
+table
+{
+	border:none;
+	text-align:justify;
+	border-spacing:30px;
+}
+
+.parallax_effect 
+{  
+    background: url("glasses.png");
+    height: 650px;
+	overflow:hidden;
+    width: 1420px;
+	position:relative;
+	background-position:bottom;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1700px;
+}
+
+.glass_layer
+{
+	background-color: rgba(216, 216, 216, 0.92);
+    width: 100%;
+    height: 100%;
+}
+
+.glass_layer_1
+{
+	background-color:white;
+    width: 330px;
+    height: 500px;
+	position:absolute;
+	top: 100px;
+    left:  110px;
+}
+
+.glass_layer_2
+{
+	background-color:white;
+	position: absolute;
+    width: 330px;
+    height: 500px;	
+	top: 100px;
+    left: 485px;
+}
+
+.glass_layer_3
+{
+	background-color:white;
+    width: 330px;
+    height: 500px;
+    position: absolute;
+	top: 100px;
+    left: 860px;
+}
+
+.center
+{
+	position:absolute;
+}
+
+.para
+{
+	position:absolute;
+	MARGIN:0PX;
+    left:40%;
+}
+
+.container
+{
+	position:relative;
+	font-family:Encode Sans Expanded;
+}
+
+.layer-bg
+{
+    background: url("notebook.jpg");
+    height: 650px;
+	overflow:hidden;
+    width: 1420px;
+	position:relative;
+	background-position:CENTER;
+}
+
+.layer 
+{
+    background-color: rgba(46, 85, 111, 0.9);
+    width: 100%;
+    height: 100%;
+}
+
+.text-place 
+{
+	position:absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image
+{
+background:url("grid.png");
+position: relative;
+}
+
+.img_p
+{
+position:relative;
+}
+
+.grid-text-place-1
+{
+	position:absolute;
+	top: 150px;
+    left: 190px;
+	font-family:Encode Sans Expanded
+
+}
+
+.grid-text-place-2
+{
+	position:absolute;
+	top:150px;
+	left: 570px;
+	font-family:Encode Sans Expanded
+
+}
+
+.grid-text-place-3
+{
+	position:absolute;
+	top: 150px;
+    left: 940px;
+	font-family:Encode Sans Expanded
+}
+
+.cont
+{
+	position:relative;
+	margin:auto;
+	width:1300px;
+	overflow-x:hidden;
+}
+
+.button_grid
+{
+	background-color:#0e3d5d;
+	color:white;
+	padding: 15px 20px;
+	border:none;
+}
+
+.button_grid:hover
+{
+	background-color:#16242E;
+}
+
+</style>
+</head>
+<body>
+
+<ul>  
+  <li style="float:left; font-family:Encode Sans Expanded">MENU</li>
+  <font size ="2">
+  <li ><a href="page2.html#services" style="font-family:Encode Sans Expanded " target="_blank">Services</a></li>
+  <li ><a href="page2.html#projects" style="font-family:Encode Sans Expanded " target="_blank">Projects</a></li>
+  <li ><a href="page2.html#about" style="font-family:Encode Sans Expanded " target="_blank">About</a></li></font>
+</ul>
+
+<div class="container">
+<img class="cropped" src = "lawyer.jpg" width="1420">
+
+<div class="top-left"><p style="font-family:Encode Sans Expanded ; font-size:20px;line-height:0.8"><font size="3">DON'T WAIT</font>
+<p style= "font-family:'Encode Sans Expanded'; font-size:40px ;line-height:0.8 ">IMPROVE<br>YOUR BUSINESS<br>TODAY!</p>
+<p style="color:yellow; line-height:0.8"><i>-Get your hands on Biz Optima-</i></p><br>
+<form><label><input type = "email"  placeholder ="Email" style=" width:300px ; height:50px ; background-color:#E4EAEE"></label>
+<p></p>
+<label>
+<button class="button" style="font-family:Encode Sans Expanded">SIGN UP FOR FREE</button></label>
+</form>
+</div>
+</div>
+
+<p id="amazing"></p>
+<table align="center" table-layout="fixed">
+<tr>
+<td width="33.33%" style="font-family:Encode Sans Expanded; ">AMAZING FEATURE #1  </td>
+
+<td width="33.33%" style="font-family:Encode Sans Expanded">AMAZING FEATURE #2  </td>
+
+<td	 width="33.33%" style="font-family:Encode Sans Expanded">AMAZING FEATURE #3  </td>
+
+</tr>
+
+<tr><td style="font-family:Encode Sans Expanded; color: #888585"><font size="3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 		 laboris nisi ut aliquip ex ea commodo consequat</font></td>
+<td style="font-family:Encode Sans Expanded ;color: #888585"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation        laboris nisi ut aliquip ex ea commodo consequat</td>
+<td style="font-family:Encode Sans Expanded ;color: #888585"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 		laboris nisi ut aliquip ex ea commodo consequat</td></tr>
+</table>
+<p id="amazing">
+<p style="background-color:#F4F4F4 ;width:106%;  text-align:center; height:300px ; margin: auto; vertical-align: middle;font-family:Encode Sans Expanded ;padding:20px">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+"I COULDN'T HAVE ASKED FOR MORE THAN THIS. BIZ OPTIMA IS THE NEXT KILLER APP"<br>
+<font size="2.5">John Doe, <font color = "#808080">CEO and Founder, Biz Optima</font></p></font>
+<div class="parallax_effect">
+<div class="glass_layer">
+<center>
+<div class = "para" style= "text-align-center; font-family:Encode Sans Expanded"><p><font color="black" size="5"><CENTER>PRICES<br></font>
+<font size="2.5" color="#808080">AFFORDABLE FOR EVERYONE</FONT></center>
+</div>
+<!-------------------------------------------------------------------------------- -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="glass_layer_1">
+<img class="img_p"src="grid.png" style="opacity:0.1;postion:left" height="500px" width="330px" > 
+</div>
+<div class="grid-text-place-1">
+
+<p style="text-align:center;font-family:Encode Sans Expanded">
+<center>
+BASIC PLAN<br>
+<br><font size="2">
+Plan Amazing feature #1<br><br>
+Plan Amazing feature #2<br><br>
+Plan Amazing feature #3<br><br>
+Plan Amazing feature #4<br>
+<br></font>
+<font size="4"><p><b>$29.99<br>
+MONTHLY</font></b></p>
+<br>
+<br>
+<button class="button_grid" style="font-family:Encode Sans Expanded">BUY NOW</button>
+</p>
+</center>
+</div>
+
+
+<div class="glass_layer_2">
+<img class="img_p"src="grid.png" style="opacity:0.1;postion:center" height="500px" width="330px" > 
+</div>
+<div class="grid-text-place-2">
+
+<p style="text-align:center;font-family:Encode Sans Expanded">
+<center>
+STANDARD PLAN<br>
+<br><font size="2">
+Plan Amazing feature #1<br><br>
+Plan Amazing feature #2<br><br>
+Plan Amazing feature #3<br><br>
+Plan Amazing feature #4<br>
+<br></font>
+<font size="4"><p><b>$39.99<br>
+MONTHLY</font></b></p>
+<br>
+<br>
+<button class="button_grid" style="font-family:Encode Sans Expanded">BUY NOW</button>
+</p>
+</center>
+</div>
+<div class="glass_layer_3">
+<img src="grid.png" style="opacity:0.1;postion:right" height="500px" width="330px" > 
+</div>
+<div class="grid-text-place-3">
+
+<p style="text-align:center;font-family:Encode Sans Expanded">
+<center>
+CORPORATE PLAN<br>
+<br><font size="2">
+Plan Amazing feature #1<br><br>
+Plan Amazing feature #2<br><br>
+Plan Amazing feature #3<br><br>
+Plan Amazing feature #4<br>
+<br></font>
+<font size="4"><p><b>$49.99<br>
+MONTHLY</font></b></p>
+<br>
+<br>
+<button class="button_grid" style="font-family:Encode Sans Expanded">BUY NOW</button>
+</p>
+</center>
+</div>
+</center>
+</div>
+</div></div>
+</center>
+<!-------------------------------------------------------------------------------------- -->
+
+
+<!--BLUE LAYER-->
+<div class="layer-bg">
+            <div class="layer">
+			<div class = "text-place"><p style= "color:white; text-align=center; font-family: 'Encode Sans Expanded">
+			<P style= "text-align-center; font-family:Encode Sans Expanded"><font color="white" size="5"><CENTER>TRY THE BEST APP IN THE MARKET<br></p></font>
+			<p style= "text-align-center; font-family:Encode Sans Expanded; line-height:0.6"><font color="white" size="2"> tell more why your software is amazing and why users need to sign up</p>
+			<label><br><br>
+<button class="button" style="font-family:Encode Sans Expanded">TRY IT FOR FREE</button></label>
+</form></center>
+</div></div></div>
+
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<!--Footer section-->
+<footer>
+<center style="font-family:Encode Sans Expanded;margin:0;line-height=0.4;text-align:center"><font color = "white" size="5"> BIZ OPTIMA</font>
+<p style="font-family:Encode Sans Expanded;line-height=0.4;text-align:center"><font size="2" color="white"> 224 Grant Ave, Redondo Beach, CA, 90278 310.555.1212 Ext.3 for Business Needs</p></font><br><br>
+<a href="https:\\www.facebook.com" target="_blank"><img src = "facebook.png" height="44" width="44"> </a>
+<a href ="https:\\www.twitter.com" target="_blank"><img src="twitter.png" height="44" width="44"> </a>
+<a href ="https:\\www.instagram.com" target="_blank"><img src="instagram.png" height="44" width="44"> </a>
+<a href ="https:\\www.youtube.com" target="_blank"><img src="youtube.png"height="44" width="44"></a>
+<a href ="https:\\plus.google.com" target="_blank"><img src="googleplus.png"height="44" width="44	"> </a></center>
+</footer>
+
+<!-- ------------------------------------------------------------------------------- -->
+
+</body>
+</html>
