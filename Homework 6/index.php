@@ -3,13 +3,9 @@ error_reporting(E_PARSE | E_ERROR);
 
 include 'geoHash.php';
 
-$google_api_key='AIzaSyAmyiqlzeWLjsBUxhF3sYRWST4IXA4-7_Q';
-$discovery_api_key='Rg4nFQmGAvlW4iANkIWnZiWyw5XpIXnY';
+$google_api_key='';
+$discovery_api_key='';
 
-//TZucIveES8vQ4UcLk4rYPiF8vlhd7ekE
-//VWoCgHAV0AZFulEhicZk4cTiWF9T7dIe
-//Rg4nFQmGAvlW4iANkIWnZiWyw5XpIXnY
-//qXpABEGQEVmZ54HDXyN3NcAbHNBVQbRX
 
 $Keyword=$_POST["keyword"];
 $Category=$_POST["category"];
