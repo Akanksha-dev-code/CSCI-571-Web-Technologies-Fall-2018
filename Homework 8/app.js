@@ -18,8 +18,8 @@ app.get('/here_button', function (req, res)
    res.setHeader("Access-Control-Allow-Origin","*");
    var params = url.parse(req.url, true).query;	
    var hashing=geohash.encode(params.lat1,params.lon1);
-   var url_text='https://app.ticketmaster.com/discovery/v2/events.json?apikey=Rg4nFQmGAvlW4iANkIWnZiWyw5XpIXnY&keyword='+params.Keyword+'&segmentId='+params.segmentId+'&radius='+params.Distance+'&unit=miles&geoPoint='+hashing;
-	
+   var url_text='https://app.ticketmaster.com/discovery/v2/events.json?apikey=Rg4nFQmGAvlW4iANkIWnZyw5XpIXnY&keyword='+params.Keyword+'&segmentId='+params.segmentId+'&radius='+params.Distance+'&unit=miles&geoPoint='+hashing;
+	//modified API key as it is sensitive information
 	    https.get(url_text,function(req2,res2)
 		{
         var res_text = "";
