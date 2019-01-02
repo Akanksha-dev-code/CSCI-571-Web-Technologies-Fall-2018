@@ -91,6 +91,7 @@ else if($scope.user.Category=="miscellaneous")
 	{
 	   $scope.location_text=$scope.other_location_t;
 		$scope.en=(encodeURI($scope.location_text));
+		//modified API key as it is sensitive information
 	$http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+$scope.en+"&key=AIzayAyiqlzeWLjsBUxhF3sYRWST4IXA4-7_Q")
 	.then(function (response)
 		{
