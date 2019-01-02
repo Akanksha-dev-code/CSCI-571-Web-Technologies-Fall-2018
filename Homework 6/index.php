@@ -536,7 +536,7 @@ function initMap(p,lt,lg)
        document.getElementById(map_here).style.display = "none";
     }
 }
-	
+
 function initMap_WALK(n) 
 {
     var directions_display = new google.maps.DirectionsRenderer;
