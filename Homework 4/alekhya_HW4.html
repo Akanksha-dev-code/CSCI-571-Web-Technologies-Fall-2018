@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+<title>HW4_Alekhya</title>
+<script>
+<!-- viewJSON------------------------------------------------------------------------------------->
+function viewJSON(what)
+{
+var requestURL = what.URL.value;
+
+<!-- Loading JSON--------------------------------------------------------------------------------->
+function loadJSON(url)
+{
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+       request =new XMLHttpRequest();
+	}		 
+	else 
+	  {
+	  // code for IE6, IE5
+		request =new ActiveXObject("Microsoft.XMLHTTP");  
+	  }
+	request.open("GET",url,false);
+	request.send();
+	if (request.status==0||request.status==200)
+	{
+		get_response_text = request.responseText;
+		jsonObj = JSON.parse(get_response_text);
+		return jsonObj;
+	}
+	else
+	{
+		window.alert("The inputted file does not exist!");
+	}
+
+}
+
+<!-------------------------------------------------------------------------------------------------->
+
+
+jsonObj = loadJSON(requestURL);
+if (window.ActiveXObject) 
+ //if IE, simply execute script (due to async row_name).
+ {  
+ if (jsonObj.parseError.errorCode!=0) 
+ {
+    var myErr = jsonObj.parseError;
+    generateError(jsonObj);
+    hWin = window.open("", "Error", "height=300,width=340");
+    hWin.document.write(html_text);
+ } 
+  else 
+ {
+	jsonObj.onload=generateHTML(jsonObj);
+	check_TF=jsonObj.onload;
+  
+		if(check_TF)
+		{
+            hWin = window.open("", "Assignment4", "height=800", "width=600");
+            hWin.document.write(html_text);   
+		}
+  }
+ } 
+else //else if FF, execute script once JSON object has loaded
+{
+    jsonObj.onload=generateHTML(jsonObj);
+	check_TF=jsonObj.onload;
+	if(check_TF)
+	{
+		hWin = window.open("", "Assignment4", "height=800", "width=600");
+		hWin.document.write(html_text);  
+	}
+}
+hWin.document.close();  
+}
+
+<!--------------------------------------------------------------------------------------------------------->
+
+
+<!------- GenerateHTML-------------------------------------------------------------------------------------->
+
+function generateHTML(jsonObj)   
+{
+var check_if_empty = JSON.stringify(jsonObj);
+var check_TF = true;
+	if (check_if_empty == JSON.stringify({}))
+		{
+             window.alert("Empty JSON file!");
+             check_TF = false;
+        }
+	else
+		{
+             if(typeof(jsonObj.Mainline.Table.Row)==='undefined')
+			 {
+				window.alert("No Container Shipping data to display!");
+                check_TF = false;
+			 }
+                
+			else
+			{
+				html_text="<html><head><title>JSON HW4_Alekhya</title></head>";
+				html_text+="<body><center>";
+				html_text+="<table border='2'>"
+				html_text+="<tr>"; 
+				var container_ships_Header=jsonObj.Mainline.Table.Header.Data;
+				var container_ships_Header_Loop=Object.keys(container_ships_Header);
+				for(var i in container_ships_Header_Loop)
+				{
+					container_header = container_ships_Header[i];
+					html_text+="<th>"+container_header+"</th>";
+				}
+				html_text+="</tr>";
+			}
+				
+       }
+var container_ships_Data = jsonObj.Mainline.Table.Row;
+	for(i=0;i<container_ships_Data.length;i++)
+	{
+		var data = container_ships_Data[i];
+        html_text+="<tr>";
+        var dataKeys = Object.keys(data);
+        for (var j in dataKeys)
+			{
+                row_name = dataKeys[j];
+                if(row_name === "HomePage")
+				{
+                    html_text+= "<td><a href='"+ data[row_name]+"'/>"+ data[row_name]+"</td>";
+                }
+				else if(row_name === "Logo")
+				{
+					html_text+= "<td><img src='"+ data[row_name]+"'height='155' width='310'></td>";
+                }
+				else if(row_name === "Hubs")
+				{
+                    var hubs = data[row_name];
+                    var hubKeys = Object.keys(hubs);
+                    html_text+="<td><ul>";
+                    for(var k in hubKeys)
+					{
+                        for(var hubsIndex in hubs[hubKeys[k]]) 
+						{
+							if (k === "0" && hubsIndex === "0") 
+							{
+								html_text+= "<li><b>"+hubs[hubKeys[k]][hubsIndex]+"</b></li>";
+                            } 
+							else 
+							{
+                                html_text+= "<li>"+hubs[hubKeys[k]][hubsIndex]+"</li>";
+                            }
+						}
+                    }
+                    html_text+="</ul></td>";
+                            
+                   }  
+				   
+				else
+				   {
+                        html_text+= "<td>"+data[row_name]+"</td>";
+                   }
+              } 
+              
+			  html_text+="</tr>";
+       }
+html_text+="</table></center></body></html>";
+return check_TF;
+}
+
+<!---------------------------------------------------------------------------------------------->
+
+</script>			
+</head>
+
+<!----------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------------BODY------------------------------------------------->			
+<body>
+<br>
+<br>
+<br>
+<br>
+<h2 style="text-align:center">Enter URL for Container Shipping Companies List JSON File</h2>
+<center>
+<form name="myform" id="location" method="GET">
+<input type="text" name="URL" value="containerlist.json" required><br><br></input>
+<input type="submit" name="submit" value="Submit Query" onClick="viewJSON(this.form)"></input>              
+</form>
+</center>
+</body>
+</html>
+<!--------------------------------------------------------------------------------------------------->
